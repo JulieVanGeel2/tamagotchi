@@ -1,23 +1,22 @@
+let knuffelen = 20
+knuffelen = 20
 let dood = 0
-let voeden = 0
-let knuffelen = 0
-if (knuffelen == 20) {
-    basic.showIcon(IconNames.Happy)
-}
-if (voeden == 20) {
-    basic.showIcon(IconNames.Happy)
-}
-if (dood == 0) {
-    basic.showIcon(IconNames.Asleep)
-}
+basic.showIcon(IconNames.Happy)
+loops.everyInterval(1000, function () {
+	
+})
+loops.everyInterval(1000, function () {
+	
+})
 basic.forever(function () {
-    if (input.buttonIsPressed(Button.B) && input.buttonIsPressed(Button.A)) {
+    let voeden = 0
+    if (knuffelen > 10 && voeden > 10) {
         basic.showIcon(IconNames.Happy)
     }
-    if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {
+    if (knuffelen < 10 && knuffelen > 1 || voeden < 10 && voeden > 1) {
         basic.showIcon(IconNames.Sad)
     }
-    if (knuffelen < 10 && knuffelen > 0) {
-    	
+    if (knuffelen > 0 && voeden > 0) {
+        basic.showIcon(IconNames.Asleep)
     }
 })
